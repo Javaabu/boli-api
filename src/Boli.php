@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class Boli
 {
-    const DEFAULT_API_URL = 'https://api-business.egov.mv/WebApi/api/';
+    const DEFAULT_API_URL = 'https://api-business.egov.mv/WebApi/api';
 
     /**
      * @var Client
@@ -47,7 +47,7 @@ class Boli
     {
         $this->username = $username;
         $this->password = $password;
-        $this->api_url = $url ?: self::DEFAULT_API_URL;
+        $this->api_url = rtrim($url ?: self::DEFAULT_API_URL, '/');
 
         $this->client = $this->initClient($client_options);
     }
@@ -86,6 +86,8 @@ class Boli
     protected function sendRequest(string $endpoint, $params = [], $method = 'GET'): ResponseInterface
     {
         $params_name = $method == 'GET' ? 'query' : 'form_params';
+
+        $endpoint = '/'.ltrim($endpoint, '/');
 
         return $this->client->request($method, $endpoint, [
             $params_name => $params,
