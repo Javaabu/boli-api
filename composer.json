@@ -1,6 +1,6 @@
 {
     "name": "javaabu/boli-api",
-    "description": "compo",
+    "description": "PHP SDK for Ministry of Economic Development's Boli System",
     "homepage": "https://github.com/Javaabu/boli-api",
     "license": "MIT",
     "authors": [
