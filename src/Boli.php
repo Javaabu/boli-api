@@ -127,7 +127,7 @@ class Boli
      */
     public function getBusinessEntity(string $registration_number): ?array
     {
-        return $this->getJson('/BusinessEntities/GetBusinessEntity', ['businessEntityNumber' => $registration_number]);
+        return $this->getJson('BusinessEntities/GetBusinessEntity', ['businessEntityNumber' => $registration_number]);
     }
 
     /**
@@ -155,7 +155,7 @@ class Boli
      */
     public function getProduct(string $registration_number): ?array
     {
-        return $this->getJson('/products/GetProduct', ['productNumber' => $registration_number]);
+        return $this->getJson('products/GetProduct', ['productNumber' => $registration_number]);
     }
 
     /**
@@ -166,7 +166,7 @@ class Boli
      */
     public function getImportLicense(string $license_number): ?array
     {
-        return $this->getJson('/products/GetImportLicense', ['productNumber' => $license_number]);
+        return $this->getJson('products/GetImportLicense', ['productNumber' => $license_number]);
     }
 
 }
