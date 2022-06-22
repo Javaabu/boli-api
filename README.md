@@ -79,6 +79,8 @@ $entity = $boli->getBusinessEntity('C-0933/2017');
 Using the Facade
 
 ``` php
+use Boli;
+
 $entity = Boli::getBusinessEntity('C-0933/2017');
 ```
 

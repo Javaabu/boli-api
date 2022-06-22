@@ -5,7 +5,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Mohamed Jailam",
+            "name": "Mohamed Jailam"
             "email": "jailam@javaabu.com"
         },
         {
@@ -36,7 +36,10 @@
         "laravel": {
             "providers": [
                 "Javaabu\\Boli\\BoliServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Boli": "Javaabu\\Boli\\Facades\\Boli"
+            }
         }
     },
     "minimum-stability": "stable"
