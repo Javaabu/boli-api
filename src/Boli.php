@@ -141,12 +141,12 @@ class Boli
     {
         // first try business entity
         $type = 'business_entity';
-        $business = $this->getBusiness($registration_number);
+        $business = $this->getBusinessEntity($registration_number);
 
         // then try business name
         if (! $business) {
             $type = 'business_name';
-            $business = $this->getBusiness($registration_number);
+            $business = $this->getBusinessName($registration_number);
         }
 
         // then try foreign company
