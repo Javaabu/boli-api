@@ -87,6 +87,7 @@ $entity = Boli::getBusinessEntity('C-0933/2017');
 ### Available Methods
 
 ``` php
+Boli::getBusiness($business_registration_number); // for business entities + business names
 Boli::getBusinessEntity($business_registration_number);
 Boli::getProduct($product_registration_number);
 Boli::getBusinessName($business_name_registration_number);

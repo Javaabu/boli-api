@@ -131,6 +131,34 @@ class Boli
     }
 
     /**
+     * Get a single business
+     * Supports business entity, business name, foreign company
+     *
+     * @param string $registration_number
+     * @return array
+     */
+    public function getBusiness(string $registration_number): ?array
+    {
+        // first try business entity
+        $type = 'business_entity';
+        $business = $this->getBusiness($registration_number);
+
+        // then try business name
+        if (! $business) {
+            $type = 'business_name';
+            $business = $this->getBusiness($registration_number);
+        }
+
+        // then try foreign company
+        if (! $business) {
+            $type = 'foreign_company';
+            $business = $this->getForeignCompany($registration_number);
+        }
+
+        return $business ? compact('type', 'business') : null;
+    }
+
+    /**
      * Get a single business name
      *
      * @param string $registration_number
@@ -167,6 +195,39 @@ class Boli
     public function getImportLicense(string $license_number): ?array
     {
         return $this->getJson('products/GetImportLicense', ['productNumber' => $license_number]);
+    }
+
+    /**
+     * Get a single foreign company re-registration license
+     *
+     * @param string $registration_number
+     * @return array
+     */
+    public function getForeignCompany(string $registration_number): ?array
+    {
+        return $this->getJson('BusinessEntities/GetForeignCompanyReregistration', ['fcNumber' => $registration_number]);
+    }
+
+    /**
+     * Get an individual's related businesses
+     *
+     * @param string $id_card_number
+     * @return array
+     */
+    public function getIndividualsRelatedBusinesses(string $id_card_number): ?array
+    {
+        return $this->getJson('BusinessEntities/GetIndividualsRelatedBusinesses', ['idCard' => $id_card_number]);
+    }
+
+    /**
+     * Get external positions
+     *
+     * @param string $registration_number
+     * @return array
+     */
+    public function getExternalPositions(string $registration_number): ?array
+    {
+        return $this->getJson('BusinessEntities/GetExternalPositions', ['businessEntityNumber' => $registration_number]);
     }
 
 }
