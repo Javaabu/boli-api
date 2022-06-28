@@ -20,7 +20,7 @@ PHP SDK for Ministry of Economic Development's [Boli System](https://business.eg
 - [Credits](#credits)
 - [License](#license)
 - [Disclaimer](#disclaimer)
-- 
+
 ## Installation
 
 You can install the package via composer:
