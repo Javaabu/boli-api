@@ -1,8 +1,8 @@
 # Boli API
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/javaabu/boli-api.svg?style=flat-square)](https://packagist.org/packages/javaabu/boli-api)
-[![Build Status](https://img.shields.io/travis/javaabu/boli-api/master.svg?style=flat-square)](https://travis-ci.org/javaabu/boli-api)
-[![Quality Score](https://img.shields.io/scrutinizer/g/javaabu/boli-api.svg?style=flat-square)](https://scrutinizer-ci.com/g/javaabu/boli-api)
+[![Test Status](../../actions/workflows/run-tests.yml/badge.svg)](../../actions/workflows/run-tests.yml)
+![Code Coverage Badge](./.github/coverage.svg)
 [![Total Downloads](https://img.shields.io/packagist/dt/javaabu/boli-api.svg?style=flat-square)](https://packagist.org/packages/javaabu/boli-api)
 
 PHP SDK for Ministry of Economic Development's [Boli System](https://business.egov.mv/)
